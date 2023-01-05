@@ -1,0 +1,94 @@
+.weatherApp {
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  padding: 14px 14px 0px 14px;
+  margin: 20px auto;
+  max-width: 800px;
+  display: block;
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  font-family: "Caveat", cursive;
+  font-family: "Roboto", sans-serif;
+}
+
+.searchCity {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  color: white;
+  background: #546b7b;
+  transition: all 2ms ease-in-out;
+  border: #546b7b;
+}
+
+.btn-primary:hover {
+  background: #475b68;
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+h2 {
+  font-size: 40px;
+  margin-top: 0px;
+}
+.mainTemp-icon {
+  width: 223px;
+  border-radius: 40px;
+}
+
+.currentTemp {
+  font-size: 120px;
+  width: 30%;
+  position: relative;
+  left: 51px;
+}
+
+.degrees {
+  font-size: 16px;
+  position: relative;
+  top: -68px;
+  left: -38px;
+}
+
+.units {
+  text-decoration: none;
+}
+
+.units:hover {
+  text-decoration: underline;
+}
+
+.highLow {
+  position: relative;
+  top: 50px;
+  left: 89px;
+  font-size: 25px;
+}
+
+#main-description {
+  position: relative;
+  left: 16px;
+  padding: 10px 0px 20px 0px;
+  font-size: 25px;
+}
+
+.small-icon {
+  width: 100px;
+  border-radius: 40px;
+}
+
+.day {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.border {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 14px auto;
+  max-width: 800px;
+}
