@@ -70,20 +70,3 @@ function changeCity(event) {
 }
 document.querySelector("#search-row").addEventListener("submit", changeCity);
 search("Los angeles");
-
-function changeC(event) {
-  event.preventDefault();
-  let mainTemp = document.querySelector("#main-temp");
-  mainTemp.innerHTML = "19";
-}
-function changeF(event) {
-  event.preventDefault();
-  let mainTemp = document.querySelector("#main-temp");
-  mainTemp.innerHTML = "66";
-}
-
-let degreesC = document.querySelector("#units-cels");
-degreesC.addEventListener("click", changeC);
-
-let degreesF = document.querySelector("#units-fahr");
-degreesF.addEventListener("click", changeF);
