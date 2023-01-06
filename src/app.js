@@ -41,62 +41,35 @@ function showPosition(position) {
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 }
 
-function showTemp(response) {
+function changeData(response) {
   console.log(response.data);
-  let city = response.data.name;
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = `${city}`;
+  document.querySelector("h2").innerHTML = response.data.name;
 
-  let tempCurrent = Math.round(response.data.main.temp);
-  let mainTemp = document.querySelector("#main-temp");
-  mainTemp.innerHTML = `${tempCurrent}`;
-
-  let descriptionCurrent = response.data.weather[0].main;
-  console.log(response.data);
-  let mainDescription = document.querySelector("#main-description");
-  mainDescription.innerHTML = `${descriptionCurrent}`;
-
-  let tempMax = Math.round(response.data.main.temp_max);
-  let maxTemp = document.querySelector("#temp-high-current");
-  maxTemp.innerHTML = `${tempMax}`;
-  let tempMin = Math.round(response.data.main.temp_min);
-  let minTemp = document.querySelector("#temp-low-current");
-  minTemp.innerHTML = `${tempMin}`;
+  document.querySelector("#main-temp").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#main-description").innerHTML =
+    response.data.weather[0].main;
+  document.querySelector("#temp-high-current").innerHTML = Math.round(
+    response.data.main.temp_max
+  );
+  document.querySelector("#temp-low-current").innerHTML = Math.round(
+    response.data.main.temp_min
+  );
 }
 
-function changeCity(event) {
-  event.preventDefault();
-  let citySearch = document.querySelector("#search-bar");
-  console.log(citySearch.value);
-  let apiUrl = ` https://api.openweathermap.org/data/2.5/weather?q=${citySearch.value}&units=imperial`;
+function search(city) {
+  let apiUrl = ` https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial`;
   let apiKey = "ed76602da2df08fe02c1fb93789845d9";
   axios.get(`${apiUrl}&appid=${apiKey}`).then(changeData);
 }
-
-function changeData(response) {
-  console.log(response.data);
-  let city = response.data.name;
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = `${city}`;
-
-  let tempCurrent = Math.round(response.data.main.temp);
-  let mainTemp = document.querySelector("#main-temp");
-  mainTemp.innerHTML = `${tempCurrent}`;
-
-  let descriptionCurrent = response.data.weather[0].main;
-  let mainDescription = document.querySelector("#main-description");
-  mainDescription.innerHTML = `${descriptionCurrent}`;
-
-  let tempMax = Math.round(response.data.main.temp_max);
-  let maxTemp = document.querySelector("#temp-high-current");
-  maxTemp.innerHTML = `${tempMax}`;
-  let tempMin = Math.round(response.data.main.temp_min);
-  let minTemp = document.querySelector("#temp-low-current");
-  minTemp.innerHTML = `${tempMin}`;
+function changeCity(event) {
+  event.preventDefault();
+  let city = document.querySelector("#search-bar").value;
+  search(city);
 }
-
-let button = document.querySelector("#search-row");
-button.addEventListener("submit", changeCity);
+document.querySelector("#search-row").addEventListener("submit", changeCity);
+search("Los angeles");
 
 function changeC(event) {
   event.preventDefault();
