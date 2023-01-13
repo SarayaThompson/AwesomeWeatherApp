@@ -22,95 +22,98 @@
   </head>
   <body>
     <div class="container">
-      <div class="weatherApp">
-        <form id="search-row">
-          <div class="row searchCity">
-            <div class="col-9">
-              <input
-                type="search"
-                placeholder="Type a city"
-                autofocus="on"
-                autocomplete="off"
-                class="form-control"
-                id="search-bar"
-              />
+      <div class="totalPage">
+        <div class="weatherApp">
+          <form id="search-row">
+            <div class="row searchCity">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Type a city"
+                  autofocus="on"
+                  autocomplete="off"
+                  class="form-control"
+                  id="search-bar"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Find City"
+                  class="form-control btn btn-primary shadow-sm"
+                  id="search-button"
+                />
+              </div>
             </div>
-            <div class="col-3">
-              <input
-                type="submit"
-                value="Find City"
-                class="form-control btn btn-primary shadow-sm"
-                id="search-button"
-              />
-            </div>
-          </div>
-        </form>
+          </form>
 
-        <h1></h1>
-        <h2></h2>
-        <div class="row">
-          <div class="col-4">
-            <img class="mainTemp-icon" src="media/cloudy.jpg" alt="cloudy" />
-          </div>
-          <div class="col-4 currentTemp">
-            <span id="main-temp"></span>
-            <span class="degrees">°F</span>
-          </div>
-          <div class="col-4 highLow">
-            <strong>High: <span id="temp-high-current"></span>°F</strong><br />
-            Low: <span id="temp-low-current"></span>°F
-          </div>
-          <div id="main-description"></div>
-          <span class="border">
-            <div class="row">
-              <div class="col-2 day two">
-                <img src="media/cloudy.jpg" alt="cloudy" class="small-icon" />
-                <div>Friday</div>
-                <div><strong>42°F </strong></div>
-                <span>37°F </span>
-              </div>
-              <div class="col-2 day three">
-                <img src="media/cloudy.jpg" alt="cloudy" class="small-icon" />
-                <div>Saturday</div>
-                <div><strong>42°F </strong></div>
-                <span>38°F </span>
-              </div>
-              <div class="col-2 day four">
-                <img src="media/cloudy.jpg" alt="cloudy" class="small-icon" />
-                <div class="day">Sunday</div>
-                <div><strong>44°F </strong></div>
-                <span>35°F </span>
-              </div>
-              <div class="col-2 day five">
-                <img src="media/cloudy.jpg" alt="cloudy" class="small-icon" />
-                <div>Monday</div>
-                <div><strong>43°F </strong></div>
-                <span>37°F </span>
-              </div>
-              <div class="col-2 day six">
-                <img src="media/cloudy.jpg" alt="cloudy" class="small-icon" />
-                <div>Tuesday</div>
-                <div><strong>41°F </strong></div>
-                <span>33°F </span>
-              </div>
-              <div class="col-2 day seven">
-                <img src="media/cloudy.jpg" alt="cloudy" class="small-icon" />
-                <div>Wednesday</div>
-                <div><strong>40°F </strong></div>
-                <span>30°F </span>
-              </div>
+          <h1></h1>
+          <h2></h2>
+          <div class="row">
+            <div class="col-4">
+              <img class="mainTemp-icon" src="media/cloudy.jpg" alt="cloudy" />
             </div>
-          </span>
+            <div class="col-4 currentTemp">
+              <span id="main-temp"></span>
+              <span class="degrees">°F</span>
+            </div>
+            <div class="col-4 highLow">
+              <strong>High: <span id="temp-high-current"></span>°F</strong
+              ><br />
+              Low: <span id="temp-low-current"></span>°F
+            </div>
+            <div id="main-description"></div>
+            <span class="border">
+              <div class="row">
+                <div class="col-2 day two">
+                  <img src="media/cloudy.jpg" alt="cloudy" class="small-icon" />
+                  <div>Friday</div>
+                  <div><strong>42°F </strong></div>
+                  <span>37°F </span>
+                </div>
+                <div class="col-2 day three">
+                  <img src="media/cloudy.jpg" alt="cloudy" class="small-icon" />
+                  <div>Saturday</div>
+                  <div><strong>42°F </strong></div>
+                  <span>38°F </span>
+                </div>
+                <div class="col-2 day four">
+                  <img src="media/cloudy.jpg" alt="cloudy" class="small-icon" />
+                  <div class="day">Sunday</div>
+                  <div><strong>44°F </strong></div>
+                  <span>35°F </span>
+                </div>
+                <div class="col-2 day five">
+                  <img src="media/cloudy.jpg" alt="cloudy" class="small-icon" />
+                  <div>Monday</div>
+                  <div><strong>43°F </strong></div>
+                  <span>37°F </span>
+                </div>
+                <div class="col-2 day six">
+                  <img src="media/cloudy.jpg" alt="cloudy" class="small-icon" />
+                  <div>Tuesday</div>
+                  <div><strong>41°F </strong></div>
+                  <span>33°F </span>
+                </div>
+                <div class="col-2 day seven">
+                  <img src="media/cloudy.jpg" alt="cloudy" class="small-icon" />
+                  <div>Wednesday</div>
+                  <div><strong>40°F </strong></div>
+                  <span>30°F </span>
+                </div>
+              </div>
+            </span>
+          </div>
         </div>
+        <p class="credit">
+          <a
+            href="https://github.com/SarayaThompson/AwesomeWeatherApp"
+            target="_blank"
+            >open-source code</a
+          >
+          by Saraya Thompson
+        </p>
       </div>
-      <p class="credit">
-        <a
-          href="https://github.com/SarayaThompson/AwesomeWeatherApp"
-          target="_blank"
-          >open-source code</a
-        >
-        by Saraya Thompson
-      </p>
     </div>
     <script src="src/app.js"></script>
   </body>

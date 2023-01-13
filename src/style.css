@@ -3,11 +3,14 @@
   border-radius: 10px;
   padding: 14px 14px 0px 14px;
   margin: 20px auto;
-  max-width: 800px;
   display: block;
   background: linear-gradient(to top, #dfe9f3 0%, white 100%);
   font-family: "Caveat", cursive;
   font-family: "Roboto", sans-serif;
+}
+
+.totalPage {
+  max-width: 800px;
 }
 
 .searchCity {
@@ -95,6 +98,6 @@ h2 {
 
 .credit {
   position: relative;
-  left: 73px;
+  left: 5px;
   top: -26px;
 }
