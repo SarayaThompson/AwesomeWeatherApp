@@ -29,18 +29,6 @@ document.querySelector("h1").innerHTML = `${days[now.getDay()]}, ${
   months[now.getMonth()]
 } ${now.getDate()}, ${now.getFullYear()} ${now.getHours()}:${now.getMinutes()}`;
 
-navigator.geolocation.getCurrentPosition(showPosition);
-
-function showPosition(position) {
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude);
-  let lat = position.coords.latitude;
-  let long = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=imperial`;
-  let apiKey = "ed76602da2df08fe02c1fb93789845d9";
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
-}
-
 function changeData(response) {
   console.log(response.data);
   document.querySelector("h2").innerHTML = response.data.name;
