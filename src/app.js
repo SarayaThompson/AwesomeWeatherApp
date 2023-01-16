@@ -31,6 +31,7 @@ document.querySelector("h1").innerHTML = `${days[now.getDay()]}, ${
 
 function changeData(response) {
   console.log(response.data);
+  console.log(response.data.weather[0].icon);
   document.querySelector("h2").innerHTML = response.data.name;
 
   document.querySelector("#main-temp").innerHTML = Math.round(
@@ -44,6 +45,16 @@ function changeData(response) {
   document.querySelector("#temp-low-current").innerHTML = Math.round(
     response.data.main.temp_min
   );
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.weather[0].main);
 }
 
 function search(city) {
