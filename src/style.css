@@ -50,10 +50,10 @@ h2 {
 }
 
 .degrees {
-  font-size: 16px;
+  font-size: 20px;
   position: relative;
   top: -68px;
-  left: -38px;
+  left: -27px;
 }
 
 .units {
@@ -62,6 +62,15 @@ h2 {
 
 .units:hover {
   text-decoration: underline;
+}
+
+.currentTemp .active {
+  color: black;
+  cursor: default;
+}
+
+.currentTemp .active:hover {
+  text-decoration: none;
 }
 
 .highLow {

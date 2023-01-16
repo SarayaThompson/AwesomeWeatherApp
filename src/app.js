@@ -31,12 +31,11 @@ document.querySelector("h1").innerHTML = `${days[now.getDay()]}, ${
 
 function changeData(response) {
   console.log(response.data);
-  console.log(response.data.weather[0].icon);
   document.querySelector("h2").innerHTML = response.data.name;
 
-  document.querySelector("#main-temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  farhenheitTemp = Math.round(response.data.main.temp);
+
+  document.querySelector("#main-temp").innerHTML = farhenheitTemp;
   document.querySelector("#main-description").innerHTML =
     response.data.weather[0].main;
   document.querySelector("#temp-high-current").innerHTML = Math.round(
@@ -69,3 +68,26 @@ function changeCity(event) {
 }
 document.querySelector("#search-row").addEventListener("submit", changeCity);
 search("Los angeles");
+
+let farhenheitTemp = null;
+
+function showCelciusTemp(event) {
+  event.preventDefault();
+  let celciusTemp = ((farhenheitTemp - 32) * 5) / 9;
+  document.querySelector("#main-temp").innerHTML = Math.round(celciusTemp);
+  farhenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
+}
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", showCelciusTemp);
+
+function showFahrTemp(event) {
+  event.preventDefault();
+  document.querySelector("#main-temp").innerHTML = farhenheitTemp;
+  celciusLink.classList.remove("active");
+  farhenheitLink.classList.add("active");
+}
+
+let farhenheitLink = document.querySelector("#fahrenheit-link");
+farhenheitLink.addEventListener("click", showFahrTemp);
