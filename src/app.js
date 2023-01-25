@@ -29,6 +29,28 @@ document.querySelector("h1").innerHTML = `${days[now.getDay()]}, ${
   months[now.getMonth()]
 } ${now.getDate()}, ${now.getFullYear()} ${now.getHours()}:${now.getMinutes()}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wed", "Thurs", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <img src="http://openweathermap.org/img/wn/01n@2x.png" alt="Clear" class="small-icon">
+        <div class="forecast-date">${day}</div>
+        <div class="forecast-temp-max">
+          <strong>42°F </strong>
+        </div>
+        <span class="forecast-temp-min">37°F </span>
+      </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function changeData(response) {
   console.log(response.data);
   document.querySelector("h2").innerHTML = response.data.name;
@@ -54,6 +76,8 @@ function changeData(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].main);
+
+  displayForecast();
 }
 
 function search(city) {
