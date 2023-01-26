@@ -51,8 +51,14 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "ed76602da2df08fe02c1fb93789845d9";
+  let apiUrl = `
+  https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast());
+}
+
 function changeData(response) {
-  console.log(response.data);
   document.querySelector("h2").innerHTML = response.data.name;
 
   farhenheitTemp = Math.round(response.data.main.temp);
@@ -76,8 +82,7 @@ function changeData(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].main);
-
-  displayForecast();
+  getForecast(response.data.coord);
 }
 
 function search(city) {
