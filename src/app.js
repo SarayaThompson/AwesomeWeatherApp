@@ -29,7 +29,8 @@ document.querySelector("h1").innerHTML = `${days[now.getDay()]}, ${
   months[now.getMonth()]
 } ${now.getDate()}, ${now.getFullYear()} ${now.getHours()}:${now.getMinutes()}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -52,10 +53,10 @@ function displayForecast() {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "ed76602da2df08fe02c1fb93789845d9";
+  let apiKey = "2718952144ed077c12e7c160fb6fc351";
   let apiUrl = `
   https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
-  axios.get(apiUrl).then(displayForecast());
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function changeData(response) {
