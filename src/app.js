@@ -27,7 +27,6 @@ let months = [
 
 function formatDt(timestamp) {
   let date = new Date(timestamp * 1000);
-  console.log(date);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
 
@@ -39,7 +38,6 @@ document.querySelector("h1").innerHTML = `${days[now.getDay()]}, ${
 } ${now.getDate()}, ${now.getFullYear()} ${now.getHours()}:${now.getMinutes()}`;
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
@@ -88,6 +86,9 @@ function changeData(response) {
   );
   document.querySelector("#temp-low-current").innerHTML = Math.round(
     response.data.main.temp_min
+  );
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
   );
   document
     .querySelector("#icon")
