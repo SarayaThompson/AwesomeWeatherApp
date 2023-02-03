@@ -115,26 +115,3 @@ function changeCity(event) {
 }
 document.querySelector("#search-row").addEventListener("submit", changeCity);
 search("Los angeles");
-
-let farhenheitTemp = null;
-
-function showCelciusTemp(event) {
-  event.preventDefault();
-  let celciusTemp = ((farhenheitTemp - 32) * 5) / 9;
-  document.querySelector("#main-temp").innerHTML = Math.round(celciusTemp);
-  farhenheitLink.classList.remove("active");
-  celciusLink.classList.add("active");
-}
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", showCelciusTemp);
-
-function showFahrTemp(event) {
-  event.preventDefault();
-  document.querySelector("#main-temp").innerHTML = farhenheitTemp;
-  celciusLink.classList.remove("active");
-  farhenheitLink.classList.add("active");
-}
-
-let farhenheitLink = document.querySelector("#fahrenheit-link");
-farhenheitLink.addEventListener("click", showFahrTemp);
